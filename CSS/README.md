@@ -55,6 +55,24 @@ CSS中一个块级元素有多少种垂直水平居中
   top:calc(50% - 50px);
   left:calc(50% - 50px);
 }
+
+/*利用table-cell*/
+.content{
+width:200px;
+height:200px;
+background-color: green;
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+}
+
+.box {
+width: 100px;
+height: 100px;
+background-color: red;
+display: inline-block;
+}
 ```
+> 核心思路在于区分定位元素宽度是否固定
 - https://www.w3cplus.com/content/css3-transform
 - https://www.jianshu.com/p/907f99004c3e
