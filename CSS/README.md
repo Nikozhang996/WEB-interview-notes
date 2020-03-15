@@ -1,9 +1,9 @@
-你是如何理解跨域的？怎么解决？
+## 你是如何理解跨域的？怎么解决？
 > 首先跨域是由浏览器的同源策略引起的因此只在浏览器端发生，最初的目的是为了WEB安全性考虑，如果==端口、域名、协议==其中一个不一致即产生跨域请求。解决跨域目前最常用的是`CORS方案`，需要在axaj和服务端中设置headers，还有服务端代理和jsonp。
 - [前端常见跨域解决方案（全）](https://segmentfault.com/a/1190000011145364)
 - [跨域资源共享 CORS详解）](http://www.ruanyifeng.com/blog/2016/04/cors.html)
 
-CSS中一个块级元素有多少种垂直水平居中
+## CSS中一个块级元素有多少种垂直水平居中
 ```CSS
 // 最常规
 .box{
@@ -76,3 +76,13 @@ display: inline-block;
 > 核心思路在于区分定位元素宽度是否固定
 - https://www.w3cplus.com/content/css3-transform
 - https://www.jianshu.com/p/907f99004c3e
+
+## 请说一下标准的CSS的盒子模型
+> 首先盒子模型分标准盒子模型和怪异盒子模型   
+> 标准盒子模型的结构为：内容宽度(content) + border + padding + margin  
+> 怪异盒子模型的结构为：内容宽度(content,border,padding) + margin
+> 我们可以通过`box-sizing`控制盒子模型的**解释方式**，默认值为`content-box`标准模型，`border-box`为怪异模式。
+
+## 参考资料
+- https://blog.csdn.net/u014697639/article/details/80311559
+- （50道 CSS 经典面试题（包含答案）
