@@ -83,6 +83,16 @@ display: inline-block;
 > 怪异盒子模型的结构为：内容宽度(content,border,padding) + margin
 > 我们可以通过`box-sizing`控制盒子模型的**解释方式**，默认值为`content-box`标准模型，`border-box`为怪异模式。
 
+## CSS选择器有多少种？
+> ID选择器(#id)、类选择器#(.class-name)、标签选择器(div)、相邻选择器(div+div)、子选择器(div>span)、后代选择器(div span)、通配符选择器(*)、属性选择器、伪类选择器（a:hover)。
+> 其中权重排序为:`!important>[id>class>tag]`，其中!important比内联style优先级高。
+
+## position有多少种值？
+- static(默认值)，按照正常文档流排列
+- relative(相对定位)，不脱离文档流，参考自身静态位置通过`top,bottom,left,right`定位；
+- absolute(绝对定位)，参考距离层级最近一个不为static的父级元素通过`top,bottom,left,right`定位；
+- fixed(固定定位)，参考可视窗口为定位对象。
+
 ## 参考资料
 - https://blog.csdn.net/u014697639/article/details/80311559
 - （50道 CSS 经典面试题（包含答案）
