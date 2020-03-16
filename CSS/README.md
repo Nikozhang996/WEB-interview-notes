@@ -93,6 +93,19 @@ display: inline-block;
 - absolute(绝对定位)，参考距离层级最近一个不为static的父级元素通过`top,bottom,left,right`定位；
 - fixed(固定定位)，参考可视窗口为定位对象。
 
+## 纯CSS画一个三角形有多少种方式？
+```css
+
+```
+
+## display:none与visibility：hidden的区别？
+> display:none不显示对应的元素，在文档布局中不再分配空间，切换属性触发回流+重绘；
+> display:hidden隐藏对其元素，在文档布局中保留原来的空间，仅切换显示和隐藏，只触发重绘；
+
+## 对BFC规范(块级格式化上下文：block formatting context)的理解？
+
+
+
 ## 参考资料
 - https://blog.csdn.net/u014697639/article/details/80311559
 - （50道 CSS 经典面试题（包含答案）
