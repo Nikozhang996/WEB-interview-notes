@@ -103,8 +103,25 @@ display: inline-block;
 > display:hidden隐藏对其元素，在文档布局中保留原来的空间，仅切换显示和隐藏，只触发重绘；
 
 ## 对BFC规范(块级格式化上下文：block formatting context)的理解？
-
-
+> BFC的中文翻译是块级格式化上下文，它规定了内部的Block-level Box如何布局。
+> 核心原理是：BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+### BFC布局规则
+- 内部的元素会在垂直方向排列
+- 元素间的边距由margin值定义，相邻的两个box之间的margin会发生重叠
+- 计算BFC盒子高度时，浮动元素也参与计算
+- BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+- ？BFC的区域不会与float box重叠。
+### 什么条件下生成BFC？
+- 根元素
+- float属性不为none时
+- position为absolute或fixed
+- display为inline-block, table-cell, table-caption, flex, inline-flex
+- overflow不为visible( hidden,scroll,auto, )
+### 实际开发中有哪些实践
+- 清除浮动
+- 防止元素间的margin重叠
+### 参考
+- https://www.jianshu.com/p/66632298e355
 
 ## 参考资料
 - https://blog.csdn.net/u014697639/article/details/80311559
