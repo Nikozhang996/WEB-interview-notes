@@ -6,3 +6,5 @@
 - https://zhuanlan.zhihu.com/p/69513606
 - https://zhuanlan.zhihu.com/p/51163261
 - https://scarletsky.github.io/2016/07/29/use-gitlab-ci-for-continuous-integration/
+- https://juejin.im/post/5d074d3c6fb9a07ece67d034
+- https://juejin.im/post/5cef97e0e51d45776031af91
