@@ -16,6 +16,8 @@
 ## Vue中computed的特点
 ## Watch中deep:true是如何实现的
 ## 生命周期，不同阶段做什么事
+## 为什么template必须有一个根标签
+## VUE中v-if与v-show的区别
 
 
 ## 参考资料
