@@ -79,9 +79,9 @@ display: inline-block;
 
 ## 请说一下标准的CSS的盒子模型
 > 首先盒子模型分标准盒子模型和怪异盒子模型   
-> 标准盒子模型的结构为：内容宽度(content) + border + padding + margin  
-> 怪异盒子模型的结构为：内容宽度(content,border,padding) + margin
-> 我们可以通过`box-sizing`控制盒子模型的**解释方式**，默认值为`content-box`标准模型，`border-box`为怪异模式。
+- 标准盒子模型的结构为：内容宽度(content) + border + padding + margin  
+- 怪异盒子模型的结构为：内容宽度(content,border,padding) + margin
+- 我们可以通过`box-sizing`控制盒子模型的**解释方式**，默认值为`content-box`标准模型，`border-box`为怪异模式。
 
 ## CSS选择器有多少种？
 > ID选择器(#id)、类选择器#(.class-name)、标签选择器(div)、相邻选择器(div+div)、子选择器(div>span)、后代选择器(div span)、通配符选择器(*)、属性选择器、伪类选择器（a:hover)。

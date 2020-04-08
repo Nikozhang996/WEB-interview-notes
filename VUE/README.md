@@ -32,4 +32,11 @@
 
 ## VUE 中 v-if 与 v-show 的区别
 
+## Vue 如何实现组件缓存，以及监听缓存后的变化
+
+> 使用 keep-alive 内置组件，当组件在 keep-alive 内被切换时组件的 activated、deactivated 这两个生命周期钩子函数会被执行。  
+> 被包裹在 keep-alive 中的组件的状态将会被保留，例如我们将某个列表类组件内容滑动到第 100 条位置，那么我们在切换到一个组件后再次切换回到该组件，该组件的位置状态依旧会保持在第 100 条列表处
+
+- [Vue / keep-alive](https://www.jianshu.com/p/4b55d312d297)
+
 ## 参考资料
