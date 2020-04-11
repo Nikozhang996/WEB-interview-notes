@@ -24,4 +24,34 @@ https://www.cnblogs.com/zuobaiquan01/p/8477322.html
 
 - [学习 Javascript 闭包（Closure）](http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html)
 
+## 请写出下列代码输出的结果
+
+```javascript
+function fun(n, o) {
+  console.log(0);
+  return {
+    fun: function (m) {
+      return fun(m, n);
+    },
+  };
+}
+
+fun(1).fun(2).fun(4).fun(8);
+
+function Animal(name) {
+  this.name = name;
+}
+
+Animal.prototype.sayName = function () {
+  console.log(this.name);
+};
+
+function Cat(name) {
+  Animal.call(this, name);
+}
+
+var cat = new Cat("Jim");
+cat.sayName();
+```
+
 ## 参考资料
