@@ -1,8 +1,14 @@
+## JSON.stringify 有哪些局限性？
+
 ## 深拷贝具体实现，各种数据类型如何处理的，循环过程中如何判断 dom 对象，拷贝一个 dom 对象
 
-## setTimeout如何执行的，属于第几轮循环
+## web worker 实现深拷贝的局限，web worker 有那些局限，为什么要这样设计？
 
-## async里为什么不推荐return await
+## a==1 && a==2 && c==3 // true 有多少种实现方式？
+
+## setTimeout 如何执行的，属于第几轮循环
+
+## async 里为什么不推荐 return await
 
 ## JavaScript 中异步处理有多少种方案？
 
