@@ -13,7 +13,17 @@
 ## 简述垃圾回收机制
 
 ## 你是如何平衡 TypeScript 学习成本高、快速开发与代码规范之间的问题的
-/
+
 ## 如何做技术选型
 
 ## 项目中印象深刻的问题
+
+## 如何推动团队建设的？
+
+使用 ESLint 在 IDE 中校验，在 Git Hooks 中拦截，在 CI 中校验
+
+- ESLint
+- husky
+#### 参考资料
+
+- [当前端基建任务落到你身上，该如何推动协作？](https://mp.weixin.qq.com/s/AV-MkgjDS0JhEWNHu20LqQ)
