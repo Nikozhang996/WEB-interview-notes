@@ -1,4 +1,4 @@
-function fun(n, o) {
+/* function fun(n, o) {
   console.log(0);
   return {
     fun: function (m) {
@@ -22,3 +22,17 @@ function Cat(name) {
 
 var cat = new Cat("Jim");
 cat.sayName();
+ */
+
+function handler(func) {
+  return function () {
+    console.log("handler");
+    func();
+  };
+}
+function func() {
+  console.log(argumens);
+}
+
+let fn = handler(func);
+fn();
