@@ -24,15 +24,22 @@ var cat = new Cat("Jim");
 cat.sayName();
  */
 
-function handler(func) {
-  return function () {
-    console.log("handler");
-    func();
-  };
+function b() {
+  return new Promise(function (res, rej) {
+    true ? res(200) : rej(0);
+  });
 }
-function func() {
-  console.log(argumens);
+async function a() {
+  // try {
+  //   const result = await b();
+  //   console.log(result);
+  // } catch (error) {
+  //   console.log(error);
+  // }
+
+  return await b();
 }
 
-let fn = handler(func);
-fn();
+a().then(function (res) {
+  console.log(res);
+});
