@@ -53,10 +53,13 @@
 ## 4.Vue 中事件绑定的原理
 
 ## 5.v-model 中的实现原理及如何自定义 v-model
+> v-model本质上是value和input的语法糖，
 
 ## 6.Vue 中 v-html 会导致哪些问题
+> 任何html写入都不应该由用户写入， 否则会导致xxx攻击
 
 ## 7. Vue 父子组件生命周期调用顺序
+> 实例化中是先父后子，mounted时是先子后父。
 
 ## 8.Vue 组件如何通信? 单向数据流
 
@@ -69,8 +72,21 @@
 ## 12.谈谈你对 keep-alive 的了解
 
 ## 13.Vue 中常见性能优化
+- 静态数据尽量避免放入data中，因为data中的数据vue在实例化过程中会追加getter和setter收集对应的watcher
+- 利用Object.free冻结数据，可以拒绝该对象中的属性被添加watcher劫持。
+- 使用happyPack提高构建速度
+- 合理使用路由懒加载和异步组件提高首页速度。
+- 利用v-if特性减少实例话
+- v-for时key使用唯一固定值
+- 使用runtime版本，
+- 使用keep-ailve做组件缓存。
+- 利用防抖节流模式提高数据持久化
+- 拆分组件( 提高复用性、增加代码的可维护性,减少不必要的渲染 )
 
 ## 14.Vue3.0 你知道有哪些改进
+- 原生支持了TypeScript
+- MVVM模型用proxy重写，vue2中使用的是Object.definyP
+- vdom 的对比算法更新，只更新 vdom 的绑定了动态数据的部分
 
 ## 15.实现 hash 路由和 history 路由
 
