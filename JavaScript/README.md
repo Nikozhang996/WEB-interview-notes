@@ -1,4 +1,5 @@
 ## JSON.stringify 有哪些局限性？
+
 - 不支持函数数据类型
 
 ## 深拷贝具体实现，各种数据类型如何处理的，循环过程中如何判断 dom 对象，拷贝一个 dom 对象
@@ -10,6 +11,11 @@
 ## setTimeout 如何执行的，属于第几轮循环
 
 ## async 里为什么不推荐 return await
+> 待定
+#### 参考资料
+
+- [Disallows unnecessary return await (no-return-await)](https://eslint.org/docs/rules/no-return-await)
+- [Difference between `return await promise` and `return promise`](https://stackoverflow.com/questions/38708550/difference-between-return-await-promise-and-return-promise)
 
 ## JavaScript 中异步处理有多少种方案？
 
@@ -68,4 +74,5 @@ cat.sayName();
 ```
 
 ## 参考资料
+
 - [JavaScript 运行原理解析](https://juejin.im/post/5a5d64fbf265da3e243b831f)
