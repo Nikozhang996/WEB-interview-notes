@@ -1,12 +1,3 @@
-## 组件间的数据通信有多少种方式？
-
-- 父子间的传递，利用 props 属性和发布订阅模式`$emit / $on`
-- 兄弟间组件可以共享一个父组件作为数据中转
-- 父子间嵌套太深可以利用`$attrs,$listence`继承
-- 依赖注入形式，`provide, inject`
-- 跨级组件可以利用 EventBus（中央事件中心）形式，组件间共享同一个 vue 实例作为数据中转
-- vuex，vuex 相当于一个数据池(store)，组件间监听这个 store，当 A 组件更新 sotre，B 组件会动态更新。
-
 ## 什么情况下用 VUEX？
 
 > 业务开发中如果有一个数据需要被多个组件保持共享和同步，按照现有的数据通信方式将增加很多代码和成本。  
@@ -36,6 +27,9 @@
 
 ## 10.何时需要使用 beforeDestroy
 
+- 需要消除定时器或指定事件时
+- 如果使用了 eventBusr 挂载了订阅者则需要手动解除订阅，否则会在重复挂载订阅
+
 ## 11.Vue 中模板编译原理
 
 ## 13.为什么 V-for 和 v-if 不能连用
@@ -48,21 +42,36 @@
 
 ## 1.v-for 中为什么要用 key (图解)
 
+> key 的作用是在更新组件时判断两个节点是否相同，相同则直接利用，不相同就删除旧的创建新的。所以如果没有 key 的话每次更新都不能找到可复用的节点，不但要销毁和创建 vnode，在 DOM 里添加移除节点时性能更大。默认不传 key 则按 index 索引作为 key。而使用 index 作为 key 值的话会导致直接利用原因组件状态没法被更新，这也是为什么宁愿带唯一 key 增加性能开销的原因。
+
 ## 3.组件中的 data 为什么是一个函数
+
+> 为了使每个组件实例的 data 值都是独立的作用域，避免共享同一个引用地址导致 A 实例变更影响其他组件状态修改。
 
 ## 4.Vue 中事件绑定的原理
 
+> 普通元素绑定事件会追加 native
+
 ## 5.v-model 中的实现原理及如何自定义 v-model
-> v-model本质上是value和input的语法糖，
+
+> v-model 本质上是 value 和 input 的语法糖，
 
 ## 6.Vue 中 v-html 会导致哪些问题
-> 任何html写入都不应该由用户写入， 否则会导致xxx攻击
 
+> 任何 html 写入都不应该由用户写入， 否则会导致 xxx 攻击
 
 ## 7. Vue 父子组件生命周期调用顺序
-> 实例化中是先父后子，mounted时是先子后父。
+
+> 实例化中是先父后子，mounted 时是先子后父。
 
 ## 8.Vue 组件如何通信? 单向数据流
+
+- 父子间的传递，利用 props 属性和发布订阅模式`$emit / $on`
+- 兄弟间组件可以共享一个父组件作为数据中转
+- 父子间嵌套太深可以利用`$attrs,$listence`继承
+- 依赖注入形式，`provide, inject`
+- 跨级组件可以利用 EventBus（中央事件中心）形式，组件间共享同一个 vue 实例作为数据中转
+- vuex，vuex 相当于一个数据池(store)，组件间监听这个 store，当 A 组件更新 sotre，B 组件会动态更新。
 
 ## 9.Vue 中相同逻辑如何抽离
 
@@ -73,20 +82,22 @@
 ## 12.谈谈你对 keep-alive 的了解
 
 ## 13.Vue 中常见性能优化
-- 静态数据尽量避免放入data中，因为data中的数据vue在实例化过程中会追加getter和setter收集对应的watcher
-- 利用Object.free冻结数据，可以拒绝该对象中的属性被添加watcher劫持。
-- 使用happyPack提高构建速度
+
+- 静态数据尽量避免放入 data 中，因为 data 中的数据 vue 在实例化过程中会追加 getter 和 setter 收集对应的 watcher
+- 利用 Object.free 冻结数据，可以拒绝该对象中的属性被添加 watcher 劫持。
+- 使用 happyPack 提高构建速度
 - 合理使用路由懒加载和异步组件提高首页速度。
-- 利用v-if特性减少实例话
-- v-for时key使用唯一固定值
-- 使用runtime版本，
-- 使用keep-ailve做组件缓存。
+- 利用 v-if 特性减少实例话
+- v-for 时 key 使用唯一固定值
+- 使用 runtime 版本，
+- 使用 keep-ailve 做组件缓存。
 - 利用防抖节流模式提高数据持久化
 - 拆分组件( 提高复用性、增加代码的可维护性,减少不必要的渲染 )
 
 ## 14.Vue3.0 你知道有哪些改进
-- 原生支持了TypeScript
-- MVVM模型用proxy重写，vue2中使用的是Object.definyP
+
+- 原生支持了 TypeScript
+- MVVM 模型用 proxy 重写，vue2 中使用的是 Object.definyP
 - vdom 的对比算法更新，只更新 vdom 的绑定了动态数据的部分
 
 ## 15.实现 hash 路由和 history 路由
@@ -96,6 +107,8 @@
 ## 17.action 和 mutation 区别
 
 ## 18.简述 Vuex 工作原理
+
+> vuex 也是遵循单向数据流的思路，初始化有一个 state，默认情况下不能直接修改 state
 
 ## 为什么 template 必须有一个根标签
 
