@@ -21,6 +21,12 @@
 - [浏览器工作原理：从输入 URL 到页面加载完成 #55](https://github.com/amandakelake/blog/issues/55)
 - [Render 树、RenderObject 与 RenderLayer](http://www.nowamagic.net/academy/detail/48110562#)
 
+## 你所理解的前端模块化
+
+#### 参考资料
+
+- [前端模块化详解(完整版)](https://juejin.im/post/5c17ad756fb9a049ff4e0a62)
+
 ## 开发过程中遇到的内存泄露情况，如何解决的？
 
 ## 判断一个字符串中出现次数最多的字符，并统计这个次数。
