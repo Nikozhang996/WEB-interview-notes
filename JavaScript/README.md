@@ -11,11 +11,14 @@
 ## setTimeout 如何执行的，属于第几轮循环
 
 ## async 里为什么不推荐 return await
-> 待定
+
+> 通常两者没有太大区别，但在 return await pro()中会解释一个 promise 从而增加内存占用，除此之外，如果在 try……catch 中的话会直接在内部调用 promise resolve，而直接 return pro 的话则解释交给外层处理。
+
 #### 参考资料
 
 - [Disallows unnecessary return await (no-return-await)](https://eslint.org/docs/rules/no-return-await)
 - [Difference between `return await promise` and `return promise`](https://stackoverflow.com/questions/38708550/difference-between-return-await-promise-and-return-promise)
+- [await vs return vs return await](https://jakearchibald.com/2017/await-vs-return-vs-return-await/)
 
 ## JavaScript 中异步处理有多少种方案？
 

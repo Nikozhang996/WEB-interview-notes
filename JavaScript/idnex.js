@@ -24,22 +24,34 @@ var cat = new Cat("Jim");
 cat.sayName();
  */
 
-function b() {
-  return new Promise(function (res, rej) {
-    true ? res(200) : rej(0);
+async function rejectionWithReturnAwait() {
+  try {
+    return await Promise.reject(new Error());
+  } catch (e) {
+    return "rejectionWithReturnAwait!";
+  }
+}
+
+async function rejectionWithReturn() {
+  try {
+    return Promise.reject(new Error());
+  } catch (e) {
+    return "rejectionWithReturn!";
+  }
+}
+
+rejectionWithReturnAwait()
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
   });
-}
-async function a() {
-  // try {
-  //   const result = await b();
-  //   console.log(result);
-  // } catch (error) {
-  //   console.log(error);
-  // }
 
-  return await b();
-}
-
-a().then(function (res) {
-  console.log(res);
-});
+rejectionWithReturn()
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
