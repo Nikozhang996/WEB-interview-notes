@@ -1,3 +1,9 @@
+## JavaScript 中 this 有多少种指向
+
+#### 参考资料
+
+- [5 种正确处理 JS 的 this 指向的方式](https://blog.fundebug.com/2019/09/18/5-correct-methods-to-handler-this-in-javascript/)
+
 ## JSON.stringify 有哪些局限性？
 
 - 不支持函数数据类型
