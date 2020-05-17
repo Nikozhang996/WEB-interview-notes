@@ -1,4 +1,4 @@
-function fun(n, o) {
+/* function fun(n, o) {
   console.log(0);
   return {
     fun: function (m) {
@@ -22,3 +22,36 @@ function Cat(name) {
 
 var cat = new Cat("Jim");
 cat.sayName();
+ */
+
+async function rejectionWithReturnAwait() {
+  try {
+    return await Promise.reject(new Error());
+  } catch (e) {
+    return "rejectionWithReturnAwait!";
+  }
+}
+
+async function rejectionWithReturn() {
+  try {
+    return Promise.reject(new Error());
+  } catch (e) {
+    return "rejectionWithReturn!";
+  }
+}
+
+rejectionWithReturnAwait()
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+rejectionWithReturn()
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });

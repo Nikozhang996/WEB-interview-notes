@@ -1,8 +1,30 @@
+## JavaScript 中 this 有多少种指向
+
+#### 参考资料
+
+- [5 种正确处理 JS 的 this 指向的方式](https://blog.fundebug.com/2019/09/18/5-correct-methods-to-handler-this-in-javascript/)
+
+## JSON.stringify 有哪些局限性？
+
+- 不支持函数数据类型
+
 ## 深拷贝具体实现，各种数据类型如何处理的，循环过程中如何判断 dom 对象，拷贝一个 dom 对象
+
+## web worker 实现深拷贝的局限，web worker 有那些局限，为什么要这样设计？
+
+## a==1 && a==2 && c==3 // true 有多少种实现方式？
 
 ## setTimeout 如何执行的，属于第几轮循环
 
 ## async 里为什么不推荐 return await
+
+> 通常两者没有太大区别，但在 return await pro()中会解释一个 promise 从而增加内存占用，除此之外，如果在 try……catch 中的话会直接在内部调用 promise resolve，而直接 return pro 的话则解释交给外层处理。
+
+#### 参考资料
+
+- [Disallows unnecessary return await (no-return-await)](https://eslint.org/docs/rules/no-return-await)
+- [Difference between `return await promise` and `return promise`](https://stackoverflow.com/questions/38708550/difference-between-return-await-promise-and-return-promise)
+- [await vs return vs return await](https://jakearchibald.com/2017/await-vs-return-vs-return-await/)
 
 ## JavaScript 中异步处理有多少种方案？
 
@@ -62,4 +84,8 @@ cat.sayName();
 
 ## 参考资料
 
+<<<<<<< HEAD
 - [Vue + TypeScript + Element 项目实战及踩坑记](https://zhuanlan.zhihu.com/p/60952007)
+=======
+- [JavaScript 运行原理解析](https://juejin.im/post/5a5d64fbf265da3e243b831f)
+>>>>>>> ff5e713414c78e3d1d77333a5757b5da58e6c279

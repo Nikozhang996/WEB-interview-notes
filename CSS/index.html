@@ -1,40 +1,68 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <style>
-    body {
-      /*width: 300px;*/
-      /*position: relative;*/
-    }
-    .aside {
-      width: 100px;
-      height: 150px;
-      float: left;
-      background: #f66;
-    }
-    .main {
-      /*width: 100%;*/
-      /*width: 200px;*/
-      height: 200px;
-      background: #fcc;
-      overflow: hidden;
-      /*float: right;*/
-    }
-    .right{
-      width: 200px;
-      height: 200px;
-      background: #dddddd;
-      float: right;
-    }
-  </style>
-</head>
-<body>
-<div class="wrap">
-  <div class="aside"></div>
-  <div class="main"></div>
-  <div class="right"></div>
-</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      body {
+        /*width: 300px;*/
+        /*position: relative;*/
+      }
+      .aside {
+        width: 100px;
+        height: 150px;
+        float: left;
+        background: #f66;
+      }
+      .main {
+        /*width: 100%;*/
+        /*width: 200px;*/
+        height: 200px;
+        background: #fcc;
+        overflow: hidden;
+        /*float: right;*/
+      }
+      .right {
+        width: 200px;
+        height: 200px;
+        background: #dddddd;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="aside"></div>
+      <div class="main"></div>
+      <div class="right"></div>
+
+      <div
+        id="btn"
+        style="border: 1px solid red; display: inline-block; cursor: pointer;"
+      >
+        按钮
+      </div>
+    </div>
+
+    <script>
+      const btn = document.getElementById("btn");
+
+      function c(args) {
+        console.log(args);
+      }
+      function b(args) {
+        c(args);
+      }
+      function a(args) {
+        b(args);
+      }
+      btn.addEventListener(
+        "click",
+        function (event) {
+          b(event);
+        },
+        false
+      );
+    </script>
+  </body>
 </html>
