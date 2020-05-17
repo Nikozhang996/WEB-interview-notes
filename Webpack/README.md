@@ -13,4 +13,5 @@
 ## 如何优化打包体积？
 
 ## 优秀资源
-- [「吐血整理」再来一打Webpack面试题](https://mp.weixin.qq.com/s/UdsP3u_LR64dzffNPCx-2g)
+
+- [「吐血整理」再来一打 Webpack 面试题](https://mp.weixin.qq.com/s/UdsP3u_LR64dzffNPCx-2g)
