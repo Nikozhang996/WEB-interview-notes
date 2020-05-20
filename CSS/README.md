@@ -1,3 +1,99 @@
+## 实现一个圣杯布局
+> 题目：假设高度已知，请写出三蓝布局，其中左栏、右栏宽度各位300px，中间自适应。
+#### 基于float
+```
+<body>
+    <div class="wrap">
+      <div class="left">left</div>
+      <div class="right">right</div>
+      <div class="content">content</div>
+    </div>
+  </body>
+
+body,html{
+        color: aliceblue;
+        height: 100%;
+      }
+      .wrap{
+        height: 100%;
+      }
+      .left {
+        width: 200px;
+        height: 100%;
+        float: left;
+        background: #f66;
+      }
+      .content {
+        height: 100%;
+         background: black;
+      }
+      .right {
+        width: 200px;
+        height: 100%;
+        background: blue;
+        float: right;
+      }
+```
+- article中三个div顺序要注意left和right已经脱离文档流，这须写在center之前
+- left块为左浮动，right为右浮动，再把center放中间则其没设置宽度就会自动撑开
+#### 基于绝对定位
+```css
+.wrap{
+    height: 100%;
+    position: relative;
+  }
+  .left {
+    width: 200px;
+    height: 100%;
+    background: #f66;
+    position: absolute;
+    left: 0;
+  }
+  .content {
+    height: 100%;
+    background: black;
+    position: absolute;
+    left: 200px;
+    right: 200px;
+  }
+  .right {
+    width: 200px;
+    height: 100%;
+    background: blue;
+    position: absolute;
+    right: 0;
+  }
+```
+- .left, .right, .content都设为绝对定位
+- left，right各自定位值为0，content两边的宽度。
+#### 基于flex
+```css
+.wrap{
+        height: 100%;
+        display: flex;
+      }
+      .left {
+        width: 200px;
+        height: 100%;
+        background: #f66;
+      }
+      .content {
+        height: 100%;
+        background: black;
+        flex: 1;
+      }
+      .right {
+        width: 200px;
+        height: 100%;
+        background: blue;
+      }
+```
+### 疑点
+- table布局待尝试
+- 绝对定位的规则是怎样的？
+- 文档流的概念
+- flex属性概念。
+
 ## 解释下重绘与回流
 
 ### 参考资料

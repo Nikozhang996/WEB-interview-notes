@@ -4,65 +4,39 @@
     <meta charset="UTF-8" />
     <title>Title</title>
     <style>
-      body {
-        /*width: 300px;*/
-        /*position: relative;*/
+      body,html{
+        color: aliceblue;
+        height: 100%;
       }
-      .aside {
-        width: 100px;
-        height: 150px;
-        float: left;
+      .wrap{
+        height: 100%;
+        display: table;
+      }
+      .wrap>div{
+        display: table-cell;
+      }
+      .left {
+        width: 200px;
+        height: 100%;
         background: #f66;
       }
-      .main {
+      .content {
         /*width: 100%;*/
-        /*width: 200px;*/
-        height: 200px;
-        background: #fcc;
-        overflow: hidden;
-        /*float: right;*/
+        height: 100%;
+        background: black;
       }
       .right {
         width: 200px;
-        height: 200px;
-        background: #dddddd;
-        float: right;
+        height: 100%;
+        background: blue;
       }
     </style>
   </head>
   <body>
     <div class="wrap">
-      <div class="aside"></div>
-      <div class="main"></div>
-      <div class="right"></div>
-
-      <div
-        id="btn"
-        style="border: 1px solid red; display: inline-block; cursor: pointer;"
-      >
-        按钮
-      </div>
+      <div class="left">left</div>
+      <div class="content">content</div>
+      <div class="right">right</div>
     </div>
-
-    <script>
-      const btn = document.getElementById("btn");
-
-      function c(args) {
-        console.log(args);
-      }
-      function b(args) {
-        c(args);
-      }
-      function a(args) {
-        b(args);
-      }
-      btn.addEventListener(
-        "click",
-        function (event) {
-          b(event);
-        },
-        false
-      );
-    </script>
   </body>
 </html>
