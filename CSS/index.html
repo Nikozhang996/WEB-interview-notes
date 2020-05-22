@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Title</title>
-    <style>
-      body,html{
-        color: aliceblue;
-        height: 100%;
-      }
-      .wrap{
-        height: 100%;
-        display: table;
-      }
-      .wrap>div{
-        display: table-cell;
-      }
-      .left {
-        width: 200px;
-        height: 100%;
-        background: #f66;
-      }
-      .content {
-        /*width: 100%;*/
-        height: 100%;
-        background: black;
-      }
-      .right {
-        width: 200px;
-        height: 100%;
-        background: blue;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrap">
-      <div class="left">left</div>
-      <div class="content">content</div>
-      <div class="right">right</div>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Title</title>
+  <style>
+    .box {
+      display: flex;
+      flex-flow: column;
+    }
+
+    .row {
+      display: flex;
+      flex-flow: row;
+    }
+
+    .cell {
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      border: 1px solid #666666;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <div class="row one">
+    <div class="cell">1</div>
+    <div class="cell">2</div>
+    <div class="cell">3</div>
+  </div>
+  <div class="row two">
+    <div class="cell">4</div>
+    <div class="cell">5</div>
+    <div class="cell">6</div>
+  </div>
+  <div class="row three">
+    <div class="cell">7</div>
+    <div class="cell">8</div>
+    <div class="cell">9</div>
+  </div>
+</div>
+</body>
 </html>

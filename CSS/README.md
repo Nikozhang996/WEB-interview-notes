@@ -1,3 +1,42 @@
+## 用flex实现九宫格
+```css
+.box {
+  display: flex;
+  flex-flow: column;
+}
+
+.row {
+  display: flex;
+  flex-flow: row;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border: 1px solid #666666;
+}
+
+<div class="box">
+  <div class="row one">
+    <div class="cell">1</div>
+    <div class="cell">2</div>
+    <div class="cell">3</div>
+  </div>
+  <div class="row two">
+    <div class="cell">4</div>
+    <div class="cell">5</div>
+    <div class="cell">6</div>
+  </div>
+  <div class="row three">
+    <div class="cell">7</div>
+    <div class="cell">8</div>
+    <div class="cell">9</div>
+  </div>
+</div>
+```
+
 ## 实现一个圣杯布局
 
 > 题目：假设高度已知，请写出三蓝布局，其中左栏、右栏宽度各位 300px，中间自适应。
