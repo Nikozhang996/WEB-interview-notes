@@ -1,104 +1,118 @@
 ## 实现一个圣杯布局
-> 题目：假设高度已知，请写出三蓝布局，其中左栏、右栏宽度各位300px，中间自适应。
-#### 基于float
-```
-<body>
-    <div class="wrap">
-      <div class="left">left</div>
-      <div class="right">right</div>
-      <div class="content">content</div>
-    </div>
-  </body>
 
-body,html{
-        color: aliceblue;
-        height: 100%;
-      }
-      .wrap{
-        height: 100%;
-      }
-      .left {
-        width: 200px;
-        height: 100%;
-        float: left;
-        background: #f66;
-      }
-      .content {
-        height: 100%;
-         background: black;
-      }
-      .right {
-        width: 200px;
-        height: 100%;
-        background: blue;
-        float: right;
-      }
+> 题目：假设高度已知，请写出三蓝布局，其中左栏、右栏宽度各位 300px，中间自适应。
+
+#### 基于 float
+
+```css
+<body>
+  <div class="wrap">
+    <div class="left">left</div>
+    <div class="right">right</div>
+    <div class="content">content</div>
+  </div>
+</body>
+
+body,
+html {
+  color: aliceblue;
+  height: 100%;
+}
+.wrap {
+  height: 100%;
+}
+.left {
+  width: 200px;
+  height: 100%;
+  float: left;
+  background: #f66;
+}
+.content {
+  height: 100%;
+  background: black;
+}
+.right {
+  width: 200px;
+  height: 100%;
+  background: blue;
+  float: right;
+}
 ```
-- article中三个div顺序要注意left和right已经脱离文档流，这须写在center之前
-- left块为左浮动，right为右浮动，再把center放中间则其没设置宽度就会自动撑开
+
+- article 中三个 div 顺序要注意 left 和 right 已经脱离文档流，这须写在 center 之前
+- left 块为左浮动，right 为右浮动，再把 center 放中间则其没设置宽度就会自动撑开
+
 #### 基于绝对定位
+
 ```css
-.wrap{
-    height: 100%;
-    position: relative;
-  }
-  .left {
-    width: 200px;
-    height: 100%;
-    background: #f66;
-    position: absolute;
-    left: 0;
-  }
-  .content {
-    height: 100%;
-    background: black;
-    position: absolute;
-    left: 200px;
-    right: 200px;
-  }
-  .right {
-    width: 200px;
-    height: 100%;
-    background: blue;
-    position: absolute;
-    right: 0;
-  }
+.wrap {
+  height: 100%;
+  position: relative;
+}
+.left {
+  width: 200px;
+  height: 100%;
+  background: #f66;
+  position: absolute;
+  left: 0;
+}
+.content {
+  height: 100%;
+  background: black;
+  position: absolute;
+  left: 200px;
+  right: 200px;
+}
+.right {
+  width: 200px;
+  height: 100%;
+  background: blue;
+  position: absolute;
+  right: 0;
+}
 ```
-- .left, .right, .content都设为绝对定位
-- left，right各自定位值为0，content两边的宽度。
-#### 基于flex
+
+- .left, .right, .content 都设为绝对定位
+- left，right 各自定位值为 0，content 两边的宽度。
+
+#### 基于 flex
+
 ```css
-.wrap{
-        height: 100%;
-        display: flex;
-      }
-      .left {
-        width: 200px;
-        height: 100%;
-        background: #f66;
-      }
-      .content {
-        height: 100%;
-        background: black;
-        flex: 1;
-      }
-      .right {
-        width: 200px;
-        height: 100%;
-        background: blue;
-      }
+.wrap {
+  height: 100%;
+  display: flex;
+}
+.left {
+  width: 200px;
+  height: 100%;
+  background: #f66;
+}
+.content {
+  height: 100%;
+  background: black;
+  flex: 1;
+}
+.right {
+  width: 200px;
+  height: 100%;
+  background: blue;
+}
 ```
+
 ### 疑点
-- table布局待尝试
+
+- table 布局待尝试
 - 绝对定位的规则是怎样的？
 - 文档流的概念
-- flex属性概念。
+- flex 属性概念。
 
 ## 解释下重绘与回流
 
 ### 参考资料
+
 - [你真的了解回流和重绘吗](https://segmentfault.com/a/1190000017329980)
 - [什么是回流，什么是重绘，有什么区别？](https://www.jianshu.com/p/e081f9aa03fb)
+
 ## 你是如何理解跨域的？怎么解决？
 
 > 首先跨域是由浏览器的同源策略引起的因此只在浏览器端发生，最初的目的是为了 WEB 安全性考虑，如果==端口、域名、协议==其中一个不一致即产生跨域请求。解决跨域目前最常用的是`CORS方案`，需要在 axaj 和服务端中设置 headers，还有服务端代理和 jsonp。
@@ -245,8 +259,6 @@ display: inline-block;
 - https://www.jianshu.com/p/66632298e355
 
 ## pisotion 属性中，`relative,absolute,static,fixed`的作用，相对谁定位？
-
-
 
 ## 参考资料
 
