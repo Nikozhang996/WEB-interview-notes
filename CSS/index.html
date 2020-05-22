@@ -6,40 +6,39 @@
   <style>
     .box {
       display: flex;
-      flex-flow: column;
+      flex-wrap: wrap;
+      width: 400px;
     }
 
-    .row {
-      display: flex;
-      flex-flow: row;
-    }
 
     .cell {
-      width: 100px;
-      height: 100px;
-      line-height: 100px;
+      flex-grow: 1; /* 子元素按1/n的比例进行拉伸 */
+      background-color: #4d839c;
       text-align: center;
-      border: 1px solid #666666;
+      color: #fff;
+      font-size: 50px;
+      line-height: 2;
+    }
+
+    .cell:nth-of-type(3n){ /* 选择个数是3的倍数的元素 */
+      margin-right: 0;
+    }
+    .cell:nth-of-type(n+7){  /* 选择倒数的三个元素，n可以取0 */
+      margin-bottom: 0;
     }
   </style>
 </head>
 <body>
 <div class="box">
-  <div class="row one">
-    <div class="cell">1</div>
-    <div class="cell">2</div>
-    <div class="cell">3</div>
-  </div>
-  <div class="row two">
-    <div class="cell">4</div>
-    <div class="cell">5</div>
-    <div class="cell">6</div>
-  </div>
-  <div class="row three">
-    <div class="cell">7</div>
-    <div class="cell">8</div>
-    <div class="cell">9</div>
-  </div>
+  <div class="cell">1</div>
+  <div class="cell">2</div>
+  <div class="cell">3</div>
+  <div class="cell">4</div>
+  <div class="cell">5</div>
+  <div class="cell">6</div>
+  <div class="cell">7</div>
+  <div class="cell">8</div>
+  <div class="cell">9</div>
 </div>
 </body>
 </html>
