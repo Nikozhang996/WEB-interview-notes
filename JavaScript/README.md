@@ -23,7 +23,7 @@
 #### 参考资料
 
 - [Disallows unnecessary return await (no-return-await)](https://eslint.org/docs/rules/no-return-await)
-- [Difference between `return await promise` and `return promise`](https://stackoverflow.com/questions/38708550/difference-between-return-await-promise-and-return-promise)
+- [Difference between `return await promise` and `return promise`](https://stackoverflow.com/questions/38708][]0/difference-between-return-await-promise-and-return-promise)
 - [await vs return vs return await](https://jakearchibald.com/2017/await-vs-return-vs-return-await/)
 
 ## JavaScript 中异步处理有多少种方案？
@@ -84,8 +84,5 @@ cat.sayName();
 
 ## 参考资料
 
-<<<<<<< HEAD
 - [Vue + TypeScript + Element 项目实战及踩坑记](https://zhuanlan.zhihu.com/p/60952007)
-=======
 - [JavaScript 运行原理解析](https://juejin.im/post/5a5d64fbf265da3e243b831f)
->>>>>>> ff5e713414c78e3d1d77333a5757b5da58e6c279
