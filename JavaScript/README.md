@@ -86,3 +86,5 @@ cat.sayName();
 
 - [Vue + TypeScript + Element 项目实战及踩坑记](https://zhuanlan.zhihu.com/p/60952007)
 - [JavaScript 运行原理解析](https://juejin.im/post/5a5d64fbf265da3e243b831f)
+- [38 个 JavaScript 面试题为你助力金九银十(面试必读)](https://blog.fundebug.com/2019/09/12/38-javascript-interview-questions/)
+- [5 种正确处理 JS 的 this 指向的方式](https://blog.fundebug.com/2019/09/18/5-correct-methods-to-handler-this-in-javascript/)

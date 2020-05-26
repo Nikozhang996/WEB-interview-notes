@@ -20,3 +20,5 @@ git commit -m 'feat: add list'
 ## 参考资料
 
 - [GIT | GIT 常见面试题](https://blog.csdn.net/nobody_1/article/details/88956315)
+- [「备忘录」60+Git 常用命令行](https://juejin.im/post/5eb2d6bce51d454d9d3ed14f)
+- [在开发过程中使用 git rebase 还是 git merge，优缺点分别是什么？](https://www.zhihu.com/question/36509119)
