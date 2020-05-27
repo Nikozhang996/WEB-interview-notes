@@ -82,6 +82,8 @@ var cat = new Cat("Jim");
 cat.sayName();
 ```
 
+## 原型和原型链定义，继承
+
 ## 参考资料
 
 - [Vue + TypeScript + Element 项目实战及踩坑记](https://zhuanlan.zhihu.com/p/60952007)
