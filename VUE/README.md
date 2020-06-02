@@ -167,7 +167,7 @@ this.observeArray(value) // 进行深度监控
 
 ## 11.什么是作用域插槽
 
-## 12.谈谈你对 keep-alive 的了解
+## 12.谈谈你对 keep-alive 的理解
 
 ## 13.Vue 中常见性能优化
 
@@ -185,18 +185,37 @@ this.observeArray(value) // 进行深度监控
 ## 14.Vue3.0 你知道有哪些改进
 
 - 原生支持了 TypeScript
-- MVVM 模型用 proxy 重写，vue2 中使用的是 Object.definyP
+- 支持 Composition API
+- MVVM 模型用 proxy 重写，vue2 中使用的是 Object.definyProperty
 - vdom 的对比算法更新，只更新 vdom 的绑定了动态数据的部分
 
 ## 15.实现 hash 路由和 history 路由
 
+hash 路由是基于 onhashchange 实现的，而 history 是 history.pushState 中 h5 的 api
+
 ## 16.Vue-Router 中导航守卫有哪些
+
+- 导航被触发
+- 在失活的组件里调用离开守卫
+- 调用全局`beforeEach`守卫
+- 在复用的组件里调用`beforeRouteUpdate`守卫
+- 在路由配置里调用`beforeEnter`
+- 解析异步路由组件
+- 在被激活的组件里调用 beforeRouterEnter
+- 调用全局`beforeResolve`
+- 导航被确认
+- 调用全局的`afterEach`钩子
+- 触发 DOM 更新
+- 用创建好的实例调用`beforeRouteEnter`守卫中传给 next 的回调函数。
 
 ## 17.action 和 mutation 区别
 
+- mutation 是同步更新数据（内部会进行检测是否为异步方式更新数据），\$watch 严格模式下报错
+- action 异步操作，可以在异步执行完后调用 mutation 提交最终数据
+
 ## 18.简述 Vuex 工作原理
 
-> vuex 也是遵循单向数据流的思路，初始化有一个 state，默认情况下不能直接修改 state
+> vuex 也是遵循单向数据流的思路，初始化有一个 state，默认情况下不能直接修改 state，需要在 mutation 中派发 commit 修改 state，如果是异步操作则需要在 actions 中 dispatch 一个 mutation，最终在 mutation 中修改 state 值，getter 是相当于 computed 中的计算属性。
 
 ## 为什么 template 必须有一个根标签
 
@@ -209,4 +228,24 @@ this.observeArray(value) // 进行深度监控
 
 - [Vue / keep-alive](https://www.jianshu.com/p/4b55d312d297)
 
-## 参考资料
+## 作业
+
+### 1.双向绑定和 vuex 是否冲突?
+
+不冲突，vuex 中 state 需要实现双向绑定可以在 computed 中声明 get 和 set 方法实现。
+
+### 2. Vue 中内置组件 transition、transition-group 的源码实现原理？
+
+### 3.说说 patch 函数里做了啥?
+
+### 4.知道 vue 生命周期内部怎么实现的么 ?
+
+### 5. ssr 项目如果并发很大服务器性能怎么优化?
+
+### 6.说下项目中怎么实现权限校验?
+
+### 7.讲 vue-lazyloader 的原理，手写伪代码?
+
+### 8. Vue.set 的原理?
+
+### 9. vue compile 过程详细说一下，指令、插值表达式等 vue 语法如何生效的?
