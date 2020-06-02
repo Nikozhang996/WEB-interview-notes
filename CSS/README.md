@@ -1,4 +1,9 @@
-## 用flex实现九宫格
+## animate 和 translate 有没有用过，一些常见的属性说下？
+
+##CSS 实现宽度自适应 100%，宽高 16:9 的比例的矩形。
+
+## 用 flex 实现九宫格
+
 ```css
 .box {
   display: flex;
@@ -36,8 +41,11 @@
   </div>
 </div>
 ```
+
 #### 参考资料
-- [CSS实现自适应九宫格布局](https://me.chjiyun.com/2017/12/08/CSS%E5%AE%9E%E7%8E%B0%E8%87%AA%E9%80%82%E5%BA%94%E4%B9%9D%E5%AE%AB%E6%A0%BC%E5%B8%83%E5%B1%80/)
+
+- [CSS 实现自适应九宫格布局](https://me.chjiyun.com/2017/12/08/CSS%E5%AE%9E%E7%8E%B0%E8%87%AA%E9%80%82%E5%BA%94%E4%B9%9D%E5%AE%AB%E6%A0%BC%E5%B8%83%E5%B1%80/)
+
 ## 实现一个圣杯布局
 
 > 题目：假设高度已知，请写出三蓝布局，其中左栏、右栏宽度各位 300px，中间自适应。
@@ -45,15 +53,21 @@
 #### 基于 float
 
 ```css
-<body>
-  <div class="wrap">
-    <div class="left">left</div>
-    <div class="right">right</div>
-    <div class="content">content</div>
-  </div>
-</body>
-
-body,
+<body
+  > <div
+  class="wrap"
+  > <div
+  class="left"
+  > left</div
+  > <div
+  class="right"
+  > right</div
+  > <div
+  class="content"
+  > content</div
+  > </div
+  > </body
+  > body,
 html {
   color: aliceblue;
   height: 100%;

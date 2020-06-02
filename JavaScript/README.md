@@ -1,4 +1,32 @@
+## 如何实现一个 promise，promise 的原理，以及它的两个参数是什么？
+
+## map 和 set 有没有用过，如何实现一个数组去重，map 数据结构有什么优点？
+
+## 怎么判断两个对象是否相等
+
+## Ajax 的原生写法
+
+xhr
+
+```javascript
+```
+
+fetch
+
+```javascript
+```
+
+## iframe 的缺点有哪些？
+
+## 说一下你对原型与原型链的了解度，有几种方式可以实现继承，用原型实现继承有什么缺点，怎么解决？
+
+#### 参考资料
+
+- [5 种正确处理 JS 的 this 指向的方式](https://blog.fundebug.com/2019/09/18/5-correct-methods-to-handler-this-in-javascript/)
+
 ## JavaScript 中 this 有多少种指向
+
+- 箭头函数中的 this 只指向当前函数声明的所在作用域，且不得改变
 
 #### 参考资料
 
