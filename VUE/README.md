@@ -150,7 +150,26 @@ this.observeArray(value) // 进行深度监控
 
 ## 7. Vue 父子组件生命周期调用顺序
 
-> 实例化中是先父后子，mounted 时是先子后父。
+父子组件渲染过程类似于 DOM 事件流的捕获/冒泡
+
+#### 加载渲染过程
+
+父 beforeCreate -> 父 created -> 父 beforeMounte -> 子 beforeCreate -> 子 created -> 父 mounted -> 父 mounted
+
+#### 子组件更新过程
+
+父 beforeUpdate -> 子 beforeUpdate -> 子 updated -> 父 updated
+
+#### 父组件更新过程
+
+父 beforeUpdate -> 父 updated
+
+#### 销毁过程
+
+父 beforeDestroy -> 子 beforeDestroy -> 子 destroyed -> 父 destroyed
+
+- 组件的调用顺序是先父后子，渲染完成顺序是先子后父
+- 组件渲染操作是先父后子，销毁完成顺序是先子后父
 
 ## 8.Vue 组件如何通信? 单向数据流
 
@@ -160,14 +179,29 @@ this.observeArray(value) // 进行深度监控
 - 依赖注入形式，`provide, inject`
 - 跨级组件可以利用 EventBus（中央事件中心）形式，组件间共享同一个 vue 实例作为数据中转
 - vuex，vuex 相当于一个数据池(store)，组件间监听这个 store，当 A 组件更新 sotre，B 组件会动态更新。
+- Vue.\$refs 获取实例方式调用组件的属性和方法
 
 ## 9.Vue 中相同逻辑如何抽离
 
+相同的逻辑可以用`Vue.mixin`将抽离出来的公共属性和方法合并一起，但是
+
 ## 10.为什么要使用异步组件
 
-## 11.什么是作用域插槽
+如果组件功能庞大则加载量太大会影响渲染实践，采用异步组件可以解决这个问题，主要依赖`import()`这个语法，可以实现代码分割。
+
+```javascript
+components: {
+  AsyncComponent: (resolve) => import("./components/Component");
+}
+```
+
+## 11.什么是作用域插槽？
 
 ## 12.谈谈你对 keep-alive 的理解
+
+> core/components/keep-alive.js
+
+`keep-alive`可以实现组件的缓存，当组件切换时不会对当前组件进行卸载，常用两个属性`include/exclude`，两个生命周期`activated，deactivated`，lru 算法。
 
 ## 13.Vue 中常见性能优化
 
