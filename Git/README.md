@@ -17,6 +17,10 @@
 git commit -m 'feat: add list'
 ```
 
+## cherry-pick
+
+- [git cherry-pick 教程](http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)
+
 ## 参考资料
 
 - [GIT | GIT 常见面试题](https://blog.csdn.net/nobody_1/article/details/88956315)
