@@ -1,3 +1,14 @@
+## 你的移动端适配怎么做的？
+
+> 视图、视口、窗口
+
+参考资料：
+
+- https://mp.weixin.qq.com/s/y2kzv5S2TvkMwgwZPbSyKA
+- https://mp.weixin.qq.com/s/DFOrEUsVqmujHW7tADsH0g
+- https://mp.weixin.qq.com/s/N2vRHKOE9WH_TAtwBaiX_Q
+- https://mp.weixin.qq.com/s/ALXtRYIsaFM4FPEj3zwKqQ
+
 ## animate 和 translate 有没有用过，一些常见的属性说下？
 
 ##CSS 实现宽度自适应 100%，宽高 16:9 的比例的矩形。

@@ -1,3 +1,50 @@
+## 实现一个 Function.prototype.bind 方法的 Polyfill
+
+```
+ Function.prototype.bind = function(oThis) {
+    if (typeof this !== 'function') {
+      throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
+    }
+    var aArgs   = Array.prototype.slice.call(arguments, 1),
+        fToBind = this,
+        fNOP    = function() {},
+        fBound  = function() {
+          return fToBind.apply(this instanceof fNOP
+                 ? this
+                 : oThis,
+                 aArgs.concat(Array.prototype.slice.call(arguments)));
+        };
+    if (this.prototype) {
+      fNOP.prototype = this.prototype;
+    }
+    fBound.prototype = new fNOP();
+    return fBound;
+};
+```
+
+## js 中的 new()到底做了些什么?
+
+new 运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象的实例。
+
+1. 一个继承自  Foo.prototype  的新对象被创建。
+2. 使用指定的参数调用构造函数  Foo，并将  this  绑定到新创建的对象。new Foo  等同于  new Foo()，也就是没有指定参数列表，Foo  不带任何参数调用的情况。
+3. 由构造函数返回的对象就是  new  表达式的结果。如果构造函数没有显式返回一个对象，则使用步骤 1 创建的对象。（一般情况下，构造函数不返回值，但是用户可以选择主动返回对象，来覆盖正常的对象创建步骤）
+
+```javascript
+var cat = new Animal("cat");
+new Animal("cat") = {
+    var obj = {};
+    obj.__proto__ = Animal.prototype;
+    var result = Animal.call(obj,"cat");
+    return typeof result === 'object'? result : obj;
+}
+```
+
+1. 创建一个空对象 obj;
+2. 把 obj 的 proto 指向 Animal 的原型对象 prototype，此时便建立了 obj
+3. 对象的原型链：obj->Animal.prototype->Object.prototype->null 在 obj 对象的执行环境调用 4.4. Animal 函数并传递参数“cat”。 相当于 var result = obj.Animal("cat")。当这句执行完之后，obj 5. 便产生了属性 name 并赋值为"cat"。【关于 JS 中 call 的用法请阅读：JS 的 call 和 apply
+4. 考察第 3 步返回的返回值，如果无返回值或者返回一个非对象值，则将 obj 返回作为新对象；否则会将返回值作为新对象返回。
+
 ## 如何实现一个 promise，promise 的原理，以及它的两个参数是什么？
 
 ## map 和 set 有没有用过，如何实现一个数组去重，map 数据结构有什么优点？
@@ -26,7 +73,14 @@ fetch
 
 ## JavaScript 中 this 有多少种指向
 
+this 跟函数在哪执行没有关系，而是函数调用中决定了 this 的引用。箭头函数中的 this 取决于函数的执行上下文。
+
 - 箭头函数中的 this 只指向当前函数声明的所在作用域，且不得改变
+- 默认绑定全局变量,这条规则是最常见的，也是默认的。当函数被单独定义和调用的时候，应用的规则就是绑定全局变量。
+- 隐式绑定 隐式调用的意思是，函数调用时拥有一个上下文对象，就好像这个函数是属于该对象的一样
+- 显示绑定 学过 bind()\apply()\call()函数的都应该知道，它接收的第一个参数即是上下文对象并将其赋给 this。
+- new 新对象绑定 如果是一个构造函数，那么用 new 来调用，那么绑定的将是新创建的对象
+- iife 自执行函数中 this 指向全局变量
 
 #### 参考资料
 
