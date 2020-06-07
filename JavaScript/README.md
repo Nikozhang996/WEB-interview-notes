@@ -128,6 +128,10 @@ this 跟函数在哪执行没有关系，而是函数调用中决定了 this 的
 
 ## a==1 && a==2 && c==3 // true 有多少种实现方式？
 
+#### 参考资料
+
+- [关于(a==1&&a==2&&a==3)=true 问题的思考](https://www.jianshu.com/p/4a0d04399024)
+
 ## setTimeout 如何执行的，属于第几轮循环
 
 ## async 里为什么不推荐 return await
