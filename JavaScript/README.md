@@ -1,3 +1,13 @@
+## 为什么 0.1 + 0.2 != 0.3?
+
+双精度浮点数
+
+## 请说说你对执行 JS 代码时产生的执行上下文的理解
+
+## 线性顺序存储结构和链式存储结构有什么区别？以及优缺点。
+
+## 请说一下 ES6 中 Generator 的实现原理?
+
 ## 实现一个 Function.prototype.bind 方法的 Polyfill
 
 ```
@@ -56,6 +66,26 @@ new Animal("cat") = {
 xhr
 
 ```javascript
+var xhr = new XMLHttpRequest(); // 声明一个请求对象
+
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4) {
+    // readyState 4 代表已向服务器发送请求
+    if (xhr.status === OK) {
+      // // status 200 代表服务器返回成功
+      console.log(xhr.responseText); // 这是返回的文本
+    } else {
+      console.log("Error: " + xhr.status); // 连接失败的时候抛出错误
+    }
+  }
+};
+
+xhr.open("GET", "xxxx");
+
+// 如何设置请求头? xhr.setRequestHeader(header, value);
+xhr.setRequestHeader("Content-Type", "application/json");
+
+xhr.send(null); // get方法 send null(亦或者不传,则直接是传递 header) ,post 的 send 则是传递值
 ```
 
 fetch
@@ -91,6 +121,8 @@ this 跟函数在哪执行没有关系，而是函数调用中决定了 this 的
 - 不支持函数数据类型
 
 ## 深拷贝具体实现，各种数据类型如何处理的，循环过程中如何判断 dom 对象，拷贝一个 dom 对象
+
+> 首先 JS 中有引用数据类型和基本数据类型两种，浅拷贝就是指将普通数据类型的值复制到一个新的变量中，把数组、对象等引用数据类型添加一个新的指针到已有的内存空间里。而深拷贝是把普通数据类型复制一份的同时，对引用类型的数据也会开辟一个新的内存空间，使拷贝后的数据与原数据没有任何指针关系。那么实现浅拷贝可以用`Object.assin`和展开运算符实现，而深拷贝可以简单地用 JSON.parse(JSON.strinfty)实现，缺点是对函数无效。如果要完整地实现就需要用 for in 递归遍历，并且要注意正则和函数这种特殊情况的处理。
 
 ## web worker 实现深拷贝的局限，web worker 有那些局限，为什么要这样设计？
 

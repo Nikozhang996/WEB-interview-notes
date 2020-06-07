@@ -1,3 +1,9 @@
+##### 什么是 IFC?IFC 的作用是什么？
+
+IFC 是 inline formatting context（行内格式上下文）的简称，如果一个矩形区域，包含着一些排成一条线的盒子，称为 line box。在 IFC 中是无法直接对元素设置宽高的，一个 line box 的高度受其子元素的 line-height 和 vertical-align 的影响。宽度由他的包含块(containg block)和 floats 的存在情况决定，我们一般会利用 IFC 来进行元素的垂直与水平居中效果。
+
+例子水平放置，一个接着一个，从包含块顶部开始。在盒子间 margin,borders 和 padding 的水平值是有效的。这些盒子也许通过不同的方式进行对齐:他们的底部和顶部也许被对齐，或者通过文字的基线进行对齐。矩形区域包含着来自一行的盒子叫做 line box，主要影响 line-height 和 vertical-align 两个属性在布局的使用
+
 ## 你的移动端适配怎么做的？
 
 > 视图、视口、窗口
