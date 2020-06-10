@@ -1,57 +1,73 @@
-/* function fun(n, o) {
-  console.log(0);
-  return {
-    fun: function (m) {
-      return fun(m, n);
-    },
+{
+  const finalPrice = (number) => {
+    const doublePrice = number * 2;
+    const discount = doublePrice * 0.8;
+    const price = discount - 50;
+    return price;
   };
+
+  const result = finalPrice(100);
+  // console.log(result); // => 110
 }
 
-// fun(1).fun(2).fun(4).fun(8);
-function Animal(name) {
-  this.name = name;
-}
-
-Animal.prototype.sayName = function () {
-  console.log(this.name);
-};
-
-function Cat(name) {
-  Animal.call(this, name);
-}
-
-var cat = new Cat("Jim");
-cat.sayName();
- */
-
-async function rejectionWithReturnAwait() {
-  try {
-    return await Promise.reject(new Error());
-  } catch (e) {
-    return "rejectionWithReturnAwait!";
+{
+  function compose() {
+    const args = arguments;
+    return function (x) {
+      return Array.from(args).reduce(function (v, f) {
+        return f(v);
+      }, x);
+    };
   }
-}
 
-async function rejectionWithReturn() {
-  try {
-    return Promise.reject(new Error());
-  } catch (e) {
-    return "rejectionWithReturn!";
+  function double(x) {
+    return x * 2;
   }
+  function discount(x) {
+    return x * 0.8;
+  }
+  function coupon(x) {
+    return x - 50;
+  }
+
+  const finalPrice = compose(double, discount, coupon);
+
+  const result = finalPrice(100);
+
+  // console.log(result);
 }
 
-rejectionWithReturnAwait()
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+{
+  function finalPrice(number) {
+    return [number]
+      .map((x) => x * 2)
+      .map((x) => x * 0.8)
+      .map((x) => x - 50);
+  }
 
-rejectionWithReturn()
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+  const result = finalPrice(100);
+  // console.log(result);
+}
+
+{
+  function Box(x) {
+    return {
+      map(f) {
+        return Box(f(x));
+      },
+      inspect() {
+        return `Box${x}`;
+      },
+    };
+  }
+
+  function finalPrice(str) {
+    return Box(str)
+      .map((x) => x * 2)
+      .map((x) => x * 0.8)
+      .map((x) => x - 50);
+  }
+
+  const result = finalPrice(100);
+  console.log(result);
+}
