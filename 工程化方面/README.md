@@ -12,5 +12,6 @@
 
 
 ## 参考资料
+- [GitBook 使用教程](https://www.jianshu.com/p/421cc442f06c)
 - [GitBook 从懵逼到入门](https://blog.csdn.net/luckydarcy/article/details/81100704)
 - [Git tag 的使用与 npm version](https://www.jianshu.com/p/9e64bdf1e8f9)
