@@ -8,3 +8,9 @@
 - https://scarletsky.github.io/2016/07/29/use-gitlab-ci-for-continuous-integration/
 - https://juejin.im/post/5d074d3c6fb9a07ece67d034
 - https://juejin.im/post/5cef97e0e51d45776031af91
+
+
+
+## 参考资料
+- [GitBook 从懵逼到入门](https://blog.csdn.net/luckydarcy/article/details/81100704)
+- [Git tag 的使用与 npm version](https://www.jianshu.com/p/9e64bdf1e8f9)
