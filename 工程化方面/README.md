@@ -9,7 +9,7 @@
 - https://juejin.im/post/5d074d3c6fb9a07ece67d034
 - https://juejin.im/post/5cef97e0e51d45776031af91
 
-
+## 微前端的使用，解决了什么问题，css沙箱隔离和js沙箱隔离的原理，子模块怎么通信
 
 ## 参考资料
 - [GitBook 使用教程](https://www.jianshu.com/p/421cc442f06c)
