@@ -7,6 +7,7 @@
 - [实战笔记：Jenkins 打造强大的前端自动化工作流](https://juejin.im/post/5ad1980e6fb9a028c42ea1be)
 - [jenkins+docker 持续集成](https://juejin.im/post/5b6af759e51d451951138eb4)
 - [Jenkins 详细教程](https://www.jianshu.com/p/5f671aca2b5a)
+- [使用 npm 构建 Node.js 和 React 应用](https://www.jenkins.io/zh/doc/tutorials/build-a-node-js-and-react-app-with-npm/)
 
 ## 如何理解持续集成、持续交付、持续部署？
 
