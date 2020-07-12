@@ -38,18 +38,6 @@
 }
 
 {
-  function finalPrice(number) {
-    return [number]
-      .map((x) => x * 2)
-      .map((x) => x * 0.8)
-      .map((x) => x - 50);
-  }
-
-  const result = finalPrice(100);
-  // console.log(result);
-}
-
-{
   function Box(x) {
     return {
       map(f) {
@@ -69,5 +57,27 @@
   }
 
   const result = finalPrice(100);
-  console.log(result);
+  // console.log(result);
+}
+
+{
+  const getuser = (id) => {
+    return [
+      { id: 1, name: "Loren" },
+      { id: 2, name: "Zora" },
+    ].filter(function (item) {
+      return item.id === id;
+    })[0];
+  };
+
+  const name = getuser(1).name;
+
+  console.log(name);
+
+  try {
+    const name1 = getuser(3).name;
+    console.log(name1);
+  } catch (error) {
+    console.log(error.message);
+  }
 }

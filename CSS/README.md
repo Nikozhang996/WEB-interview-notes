@@ -1,3 +1,17 @@
+##### 请简述 CSS 加载方式`link`和`@import`的区别？
+
+1. 来源与作用
+
+- link 属于 XHTML 标签，除了可以加载 CSS 外，还可以定义 RSS，定义 rel 链接属性
+- 而@import 完全是 CSS 提供的一种方式，只能加载 CSS。
+
+2. 加载顺序不同
+
+- 加载顺序不同，link 引用的 CSS 会在页面被加载的时候同时加载，而@import 引用的 CSS 会等到页面被全部下载完再被加载。
+
+3. JavaScript 可以控制 link，但@import 却无法控制
+4. @import 可以在 CSS 中再此引入 其他样式表，以一个主表引入其他从表，从而实现模块化
+
 ##### 什么是 IFC?IFC 的作用是什么？
 
 IFC 是 inline formatting context（行内格式上下文）的简称，如果一个矩形区域，包含着一些排成一条线的盒子，称为 line box。在 IFC 中是无法直接对元素设置宽高的，一个 line box 的高度受其子元素的 line-height 和 vertical-align 的影响。宽度由他的包含块(containg block)和 floats 的存在情况决定，我们一般会利用 IFC 来进行元素的垂直与水平居中效果。
