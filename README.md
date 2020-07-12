@@ -6,6 +6,11 @@
 
 > 两年前端开发经验，一直垂直于 vue 技术栈，有大型运营管理系统(Vue+ElementUI)开发和统筹经验， 熟悉常用设计模式开发，时刻关注编码规范与思考场景更优解，追求优雅简洁代码，以灵动的设计对应复杂的变更。
 
+## 介绍最近最有亮点的项目
+
+- 微前端
+- vue-form-renderer，动态表单表格
+
 ## 资料收集
 
 - [2020 年前端面试复习必读文章【超百篇文章/赠复习导图】](https://juejin.im/post/5e8b163ff265da47ee3f54a6?utm_source=gold_browser_extension#heading-12)
