@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="part-1"></ul>
+
+    <hr />
+
+    <ul>
+      <li>怎样封装一个组件？</li>
+      <li>v-if，v-model，v-for的实现原理</li>
+      <li>请说一下响应式数据的理解？</li>
+      <li>vue中模板编译原理？</li>
+      <li>vuex模块化是怎么操作的?</li>
+      <li>vue中diff的原理?</li>
+      <li>vue的渲染流程?</li>
+      <li>vue中如何检测数组变化？</li>
+      <li>为何vue采用异步渲染？</li>
+      <li>nextTick在哪使用？原理是？</li>
+      <li>vue-cli如何修改适应自己的项目？</li>
+      <li>路由配置、传参及导航守卫等 ?</li>
+      <li>vue 大型后台项目权限系统的实现？</li>
+      <li>vue项目开发环境下启动时的整个流程</li>
+      <li>谈一谈你对Vue性能优化的理解 ?</li>
+      <li>对于修改data数据后，组件没有更新，一般你是怎么排查和解决的？</li>
+      <li>如何优化单页面首屏加载白屏体验问题 ？</li>
+      <li>自己如何实现一个cli?</li>
+      <li>从多个场景谈谈 vue 和 react 有什么区别？</li>
+      <li>vue3.0 在响应式方面对 vue2.0 的主要优化点在哪里？</li>
+    </ul>
+  </body>
+
+  <script>
+    const list = [
+      "一.vue的自定义watch是如何实现的？",
+      "二.vue中computed是如何实现的和有什么特点？",
+      "三.Vue 中 computed 和 watch 的区别？",
+      "四.Vue中assets和static的区别",
+      "五.Vue是如何实现观察者模式的 ？",
+      "六.Vue 中观察者模式和发布/订阅的区别和场景",
+      "七.Vue 中用了哪些设计模式?",
+      "八.v-if与v-for的优先级",
+      "九.生命周期钩子是如何实现的?",
+      "十.Vue(React)的生命周期方法都有哪些？一般在哪一步发起AJAx请求及原因？",
+      "十一.组件中写name选项又哪些好处及作用",
+      "十二.Vue如何实现多个组件之间的通信，多个组件使用相同状态时如何进行管理？",
+      "十三.谈一下你对vuex的个人理解 ?",
+      "十四.Vue.extend 和 Vue.mixin↵          在项目中的应用场景？能举几个例子吗？面试问区别应该怎么答？",
+      "十五.Vue 组件间传值的方式及之间区别？",
+      "十六.$attrs 是为了解决什么问题出现的？应用场景有哪些？provide/inject↵          不能解决它能解决的问题吗？",
+      "十七.既然 Vue 通过数据劫持可以精准探测数据变化,为什么还需要虚拟 DOM↵          进行 diff 检测差异?",
+      "十八.Vue为什么需要虚拟DOM",
+      "十九.diff算法的时间复杂度？",
+      "二十.Vue路由两种模式的区别",
+      "二十一.Vue初始化页面闪动问题",
+      "二十二.Vue中如何去重置data",
+      "二十三.keep-alive平时在哪使用?原理是?",
+      "二十四.函数式组件的优势及原理",
+      "二十五.移除事件监听使用 beforeDestroy 还是 destroyed 钩子？",
+      "二十六.何时使用beforeDestroy？",
+      "二十七.Vue事件修饰符有哪些？其实现原理是什么？",
+      "二十八.vue-loader是什么？使用它的用途有哪些？实现原理是什么？",
+      "二十九..sync修饰符的作用，用法以及实现原理",
+      "三十.v-bind是怎么实现的?",
+      "三十一.Vue.directive源码实现",
+      "三十二.如何理解自定义指令?",
+      "三十三.slot是如何实现的",
+      "源码调试",
+    ];
+
+    let fr = document.createDocumentFragment();
+    const domList = list.map((item) => {
+      let li = document.createElement("li");
+      li.innerHTML = item;
+      fr.appendChild(li);
+    });
+
+    document.getElementById("part-1").appendChild(fr);
+  </script>
+</html>
