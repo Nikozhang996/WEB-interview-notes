@@ -1,3 +1,9 @@
+## 伪类元素是怎样的？
+
+### 参考资料
+
+- [CSS content 内容生成技术以及应用](https://www.zhangxinxu.com/wordpress/2010/04/css-content%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF%E4%BB%A5%E5%8F%8A%E5%BA%94%E7%94%A8/)
+
 ##### 请简述 CSS 加载方式`link`和`@import`的区别？
 
 1. 来源与作用
