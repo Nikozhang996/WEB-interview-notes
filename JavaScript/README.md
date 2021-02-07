@@ -10,7 +10,17 @@
 
 ## 为什么 0.1 + 0.2 != 0.3?
 
-双精度浮点数
+因为 JavaScript 中数值运算都会从十进制转化为二进制进行，而整数的小数位在换算为二进制时会出现无限循环的情况（因为双精度和内存限制，浏览器会自动进行截取），如此在无限循环小数中计算并返回，得到的结果就是相加后的值出现多位小数。
+
+## `==`和`===`的区别
+
+`==`会进行类型转换而`===`不会，所以为了安全性通常都使用`===`进行判断，而`==`适用于`null和undeinfed`之中。
+
+## `typeof`和`instanceof`区别
+
+- typeof 只能判断基本数据类型`number，string，boolean，Symbol，null，undefined`和函数`function`
+- `Object.prototype.toString.call()`方法只能识别JS中自带的数据类型，无法识别自定义Class
+- instanceOf只能识别引用数据类型，原理是通过实例的`__ptoto__`和类的`prototype`是否相等去判断，instanceOf可以用`[Symbol.hasInstance]`的方式调用。
 
 ## 请说说你对执行 JS 代码时产生的执行上下文的理解
 
@@ -101,6 +111,7 @@ xhr.send(null); // get方法 send null(亦或者不传,则直接是传递 header
 fetch
 
 ```javascript
+
 ```
 
 ## iframe 的缺点有哪些？
