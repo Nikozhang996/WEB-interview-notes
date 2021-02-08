@@ -1,3 +1,5 @@
+# JavaScript
+
 ## 寄生组合式继承，寄生继承，组合继承，原型继承，原型链继承的区别和写法
 
 ## trim() API 怎么用正则实现，怎么用数组实现
@@ -19,36 +21,75 @@
 ## `typeof`和`instanceof`区别
 
 - typeof 只能判断基本数据类型`number，string，boolean，Symbol，null，undefined`和函数`function`
-- `Object.prototype.toString.call()`方法只能识别JS中自带的数据类型，无法识别自定义Class
-- instanceOf只能识别引用数据类型，原理是通过实例的`__ptoto__`和类的`prototype`是否相等去判断，instanceOf可以用`[Symbol.hasInstance]`的方式调用。
+- `Object.prototype.toString.call()`方法只能识别 JS 中自带的数据类型，无法识别自定义 Class
+- instanceOf 只能识别引用数据类型，原理是通过实例的`__ptoto__`和类的`prototype`是否相等去判断，instanceOf 可以用`[Symbol.hasInstance]`的方式调用。
 
 ## 请说说你对执行 JS 代码时产生的执行上下文的理解
 
-## 线性顺序存储结构和链式存储结构有什么区别？以及优缺点。
+- 首先浏览器新开一个 tab 就会新建一个 ESC 执行栈，里面默认存储着`globalContext`
+- JavaScript 执行前会进行预编译，这个过程会进行 var 变量和函数 function 的提升，同时建立 VO 变量对象
+- 函数调用时会开辟函数作用域，并在内部声明 AO 活动对象存储函数参数 arguments 和变量和[[scope]]作用域链，指向它声明时的父级作用域
+- 当函数调用变量时会在当前函数 AO 中查找，若找不到则沿着[[scope]]向上查找，直到全局对象中
+
+## 变量提升
+
+- 全局中有 GlobalContext 作为 VO
+- 函数中则 VO+arguments 成为 AO
+- 函数中会先找行参，如果没有实参则赋值为 undefined 来代替，
+- 参数赋之后则查找函数声明
+- 最后 var 变量提升
+
+## JavaScript 中的类型转换
+
+- 首先`if()表达式和+ - * /运算符`都会进行类型转换，而转换规则可以参考规范
+- 重点是原始数据类型和引用数据类型相加时，当 number 和 Object 相加时 Object 会先调用`valueOf`方法，如果`valueOf`返回的不是原始数据类型则继续调用`toString`
+- 而`valueOf`和`toString`也会被`[Symbol.toPrimitive]`改写
+- `> < == ===`也会进行类型转换
+- `{}=={}`永远都为 false，因为引用地址不一样
+- NaN 和任何类型比较都不相等
+- String 和 Number 比较，将 String 转化为 Number
+- 如果是 Boolean 类型，会把 Boolean 转化为数字
+- Object 和 String、Number、Symbol 比较的时候，会把对象转化为原始数据类型
+- 单目运算优先级最高
+
+```javascript
+/* 
+1、[] == ![] 单目运算优先级最高
+2、[] == false 布尔类型比较会转化为数字
+3、[] == 0 先调用[].valueOf，无果
+4、[] == 0 [].toString()=>''
+5、'' == 0 将string转化为number，则number('')
+6、0 == 0 true
+*/
+```
+
+## 线性顺序存储结构和链式存储结构有什么区别？以及优缺点
 
 ## 请说一下 ES6 中 Generator 的实现原理?
 
 ## 实现一个 Function.prototype.bind 方法的 Polyfill
 
-```
- Function.prototype.bind = function(oThis) {
-    if (typeof this !== 'function') {
-      throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
-    }
-    var aArgs   = Array.prototype.slice.call(arguments, 1),
-        fToBind = this,
-        fNOP    = function() {},
-        fBound  = function() {
-          return fToBind.apply(this instanceof fNOP
-                 ? this
-                 : oThis,
-                 aArgs.concat(Array.prototype.slice.call(arguments)));
-        };
-    if (this.prototype) {
-      fNOP.prototype = this.prototype;
-    }
-    fBound.prototype = new fNOP();
-    return fBound;
+```javascript
+Function.prototype.bind = function (oThis) {
+  if (typeof this !== "function") {
+    throw new TypeError(
+      "Function.prototype.bind - what is trying to be bound is not callable"
+    );
+  }
+  var aArgs = Array.prototype.slice.call(arguments, 1),
+    fToBind = this,
+    fNOP = function () {},
+    fBound = function () {
+      return fToBind.apply(
+        this instanceof fNOP ? this : oThis,
+        aArgs.concat(Array.prototype.slice.call(arguments))
+      );
+    };
+  if (this.prototype) {
+    fNOP.prototype = this.prototype;
+  }
+  fBound.prototype = new fNOP();
+  return fBound;
 };
 ```
 
@@ -118,7 +159,7 @@ fetch
 
 ## 说一下你对原型与原型链的了解度，有几种方式可以实现继承，用原型实现继承有什么缺点，怎么解决？
 
-#### 参考资料
+### 参考资料
 
 - [5 种正确处理 JS 的 this 指向的方式](https://blog.fundebug.com/2019/09/18/5-correct-methods-to-handler-this-in-javascript/)
 
@@ -133,7 +174,7 @@ this 跟函数在哪执行没有关系，而是函数调用中决定了 this 的
 - new 新对象绑定 如果是一个构造函数，那么用 new 来调用，那么绑定的将是新创建的对象
 - iife 自执行函数中 this 指向全局变量
 
-#### 参考资料
+### 参考资料
 
 - [5 种正确处理 JS 的 this 指向的方式](https://blog.fundebug.com/2019/09/18/5-correct-methods-to-handler-this-in-javascript/)
 
@@ -149,7 +190,7 @@ this 跟函数在哪执行没有关系，而是函数调用中决定了 this 的
 
 ## a==1 && a==2 && c==3 // true 有多少种实现方式？
 
-#### 参考资料
+### 参考资料
 
 - [关于(a==1&&a==2&&a==3)=true 问题的思考](https://www.jianshu.com/p/4a0d04399024)
 
@@ -159,7 +200,7 @@ this 跟函数在哪执行没有关系，而是函数调用中决定了 this 的
 
 > 通常两者没有太大区别，但在 return await pro()中会解释一个 promise 从而增加内存占用，除此之外，如果在 try……catch 中的话会直接在内部调用 promise resolve，而直接 return pro 的话则解释交给外层处理。
 
-#### 参考资料
+### 参考资料
 
 - [Disallows unnecessary return await (no-return-await)](https://eslint.org/docs/rules/no-return-await)
 - [Difference between `return await promise` and `return promise`](https://stackoverflow.com/questions/38708][]0/difference-between-return-await-promise-and-return-promise)
@@ -173,7 +214,7 @@ this 跟函数在哪执行没有关系，而是函数调用中决定了 this 的
 - 发布订阅模式
 - generator
 
-#### 参考资料
+### 参考资料
 
 https://www.cnblogs.com/zuobaiquan01/p/8477322.html
 
@@ -193,7 +234,7 @@ https://www.cnblogs.com/zuobaiquan01/p/8477322.html
 
 简言之，闭包就是能够读取其他函数内部变量的函数。由于在 JS 中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成"定义在一个函数内部的函数"。利用闭包的特征我们可以实现高阶函数与函数柯里化。
 
-#### 参考资料
+### 参考资料
 
 - [学习 Javascript 闭包（Closure）](http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html)
 
