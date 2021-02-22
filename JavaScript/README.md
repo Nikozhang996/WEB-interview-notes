@@ -1,6 +1,34 @@
 # JavaScript
 
-## 寄生组合式继承，寄生继承，组合继承，原型继承，原型链继承的区别和写法
+## 提升变量 请输出结果并进行解释
+
+```javascript
+var name = "spring";
+(function () {
+  if (typeof name === "undefined") {
+    var name = "summer";
+    console.log(name);
+  } else {
+    console.log(name);
+  }
+})();
+```
+
+输出 summer，在 JavaScript 中， functions 和 variables 在预解析 会被提升。变量提升是 JavaScript 将声明移至作用域 scope (全局域或者当前函数作用域) 顶部的行为。
+这意味着你可以在声明一个函数或变量之前引用它，或者可以说：一个变量或函数可以在它被引用之后声明。
+
+## filter 过滤器 请输出结果并进行解释
+
+```javascript
+//filter过滤器  请输出结果并进行解释
+var ary = [0, 1, 2];
+ary[10] = 10;
+ary.filter(function (x) {
+  return x === undefined;
+});
+```
+
+数组的长度虽然是 11，但是被填充的几个元素都是 empty，而不是 undefined，在用 filter 循环时，会自动忽略掉 empty 的元素。==数组自带的循环方法，都会忽略 empty==。
 
 ## trim() API 怎么用正则实现，怎么用数组实现
 
