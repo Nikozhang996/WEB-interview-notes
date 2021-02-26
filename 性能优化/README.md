@@ -1,4 +1,7 @@
 ## 常见优化策略
+- requestIdleCallback
+- requestAnimationFrame
+- IntersectionObserver 懒加载
 - 使用HTTP2，相比HTTP1.1，H2提供了许多优点，包括二进制报头和多路复用
 - 考虑在所有关键资源加载完毕后延迟加载屏幕外和隐藏的图像
 - 合理使用图片格式，如JPG, PNG, SVG，可以考虑用web新一代格式
@@ -7,7 +10,7 @@
 - 减少主线程工作
 
 
-## 参考资料
+## 参考资料 
 
 - [这是关于 JavaScript 内存泄露和 CSS 优化相关序列文章](https://github.com/zhansingsong/js-leakage-patterns)
 - [23 条性能优化](https://zhuanlan.zhihu.com/p/121056616)
