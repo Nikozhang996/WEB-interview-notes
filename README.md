@@ -18,3 +18,5 @@
 - [我在阿里招前端，我该怎么帮你？](https://s3egmentfault.com/a/1190000021761594)
 - [前端跳槽面试必备技巧](https://articles.jerryshi.com/learning/fe/js-interview-skill.html#_2-3-%E4%B8%9A%E5%8A%A1%E5%88%86%E6%9E%90%E5%92%8C%E5%AE%9E%E6%88%98%E6%A8%A1%E6%8B%9F)
 - [做了两年前端开发，平时就是拿 Vue 写写页面和组件，简历的项目经历应该怎么写得好看？](https://www.zhihu.com/question/384048633/answer/1134746899)
+- [2020 届硕士的秋招前端面试实战经验](https://github.com/zhenzhencai/FontEndInterview)
+- [JavaScript 进阶问题列表](https://github.com/lydiahallie/javascript-questions)

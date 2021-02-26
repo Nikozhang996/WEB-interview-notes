@@ -14,15 +14,45 @@
 
 ## 响应式数据的原理
 
-> 核心点 Vue2 中基于 Object.defineProperty，Vue3 则用 Proxy 重写。默认 Vue 在初始化数据时，会给 Data 中的属性使用 Object.defineProperty 重新定义所有属性，当页面取到对应属性时会进行依赖收集（收集当前组件的 watcher），如果属性发生变化则通知相关依赖进行更新操作。
+> vue.js 是采用数据劫持结合发布订阅模式的方式，通过 es5 提供的 Object.defineProperty()方法来劫持(监视)各个属性的 setter，getter，在数据变动的时候发布消息给订阅者，触发相应的监听回调。并且，由于是在不同的数据上触发同步，可以精确的将变更发送给绑定的试图，而不是对所有的数据都执行一次检测。
 
 #### 原理
 
-- initData，初始化用户传入的 data 数据
-- new Observer，将数据进行观测
-- this.walk(value)，进行对象的处理
-- defineReactive，循环对象属性定义响应式变化
-- Object.defineProperty，使用 Object.defineProperty 重新定义数据
+1. 需要 observer 的数据对象进行递归遍历，包括子属性对象的属性，都加上 getter 和 setter 这样的话，给这个对象的某个值赋值，就会触发 setter，那么就能监听到数据变化
+2. compile 解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，更新视图，
+3. Watcher 订阅者是 Observer 和 compiler 之间通信桥梁，主要做的事情是:
+
+- 在自身实例化时往属性订阅器(dep)里添加自己
+- 自身必须有一个 update()的方法
+- 待属性变动 dep.notice()通知的时候，能调用自身的 update()方法，并触发 compile 中绑定的回调，则功成身退
+
+4. MVVM 作为数据绑定的入口，整合 observer、compile 和 watcher 三者，通过 observer 来监听自己的 model 数据变化，通过 compile 来编译模板指令，最终利用 watcher 搭起 observer 和 compile 之间的通信桥梁，达到数据变化--视图更新；视图交互变化(input)--> 数据 model 变化的双向绑定效果
+
+#### 版本比较
+
+vue 是基于依赖收集的双向绑定；3.0 版本之前使用 Object.defineProperty, 3.0 新版使用 Proxy
+
+基于数据劫持/依赖收集的双向绑定的优点
+
+- 不需要显示的调用，Vue 利用数据劫持+发布订阅，可以直接通知变化并且驱动视图
+- 直接的到精确的变化数据，劫持了属性 setter，当属性值改变，我们可以精确的获取变化的内容 newValue，不需要额为的 diff 操作
+
+Object。defineProperty 的缺点
+
+- 不能监听数组：因为数组没有 getter 和 setter，因为数组长度不确定，如果太长性能负担太大
+- 只能监听属性，而不是整个对象，需要遍历循环属性
+- 只能监听属性变化，不能监听属性的删减
+
+proxy 的好处
+
+- 可以监听数组
+- 监听整个对象不是属性
+- 13 种拦截方法，强大很多
+- 返回新对象而不是直接修改原对象，更符合 immutable；
+
+proxy 的缺点
+
+- 兼容性不好，而且无法用 polyfill 磨平
 
 ## VUE 中是如何检测数组变化的
 

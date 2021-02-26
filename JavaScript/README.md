@@ -34,6 +34,10 @@ ary.filter(function (x) {
 
 ## commonJs 和 ES6 模块的区别
 
+- 首先 CommonJS 是 node 的模块化规范，而 ESModules 是 ecma 定义的
+- 而 CommonJS 是动态执行，可以在运行时导入导出，而 ES Module 属于静态分析所以必须在头部前置声明
+- 因为 ES Modules 静态分析的原因，在编译时可以实现摇树（tree sharking）
+
 ## async,await 的使用以及原理，返回 promise,捕获异常怎么处理等
 
 ## 浏览器的事件循环 , node 的事件循环
@@ -304,3 +308,5 @@ cat.sayName();
 - [JavaScript 运行原理解析](https://juejin.im/post/5a5d64fbf265da3e243b831f)
 - [38 个 JavaScript 面试题为你助力金九银十(面试必读)](https://blog.fundebug.com/2019/09/12/38-javascript-interview-questions/)
 - [5 种正确处理 JS 的 this 指向的方式](https://blog.fundebug.com/2019/09/18/5-correct-methods-to-handler-this-in-javascript/)
+- [总结 js 的 this 面试题](https://blog.csdn.net/loringray/article/details/98316845)
+- [经常被面试官考的 JavaScript 数据类型知识你真的懂吗？](https://mp.weixin.qq.com/s/uYxyDfqUJ2F1G5Iyj9bDiw)
