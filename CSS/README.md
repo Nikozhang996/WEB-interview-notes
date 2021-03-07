@@ -47,7 +47,7 @@ IFC 是 inline formatting context（行内格式上下文）的简称，如果�
 
 ## 用 flex 实现九宫格
 
-```css
+```html
 .box {
   display: flex;
   flex-flow: column;
@@ -95,7 +95,7 @@ IFC 是 inline formatting context（行内格式上下文）的简称，如果�
 
 #### 基于 float
 
-```css
+```html
 <body
   > <div
   class="wrap"
@@ -179,6 +179,7 @@ html {
   height: 100%;
   display: flex;
 }
+？BFC 的区域不会与 float box 重叠。
 .left {
   width: 200px;
   height: 100%;
@@ -209,13 +210,6 @@ html {
 
 - [你真的了解回流和重绘吗](https://segmentfault.com/a/1190000017329980)
 - [什么是回流，什么是重绘，有什么区别？](https://www.jianshu.com/p/e081f9aa03fb)
-
-## 你是如何理解跨域的？怎么解决？
-
-> 首先跨域是由浏览器的同源策略引起的因此只在浏览器端发生，最初的目的是为了 WEB 安全性考虑，如果==端口、域名、协议==其中一个不一致即产生跨域请求。解决跨域目前最常用的是`CORS方案`，需要在 axaj 和服务端中设置 headers，还有服务端代理和 jsonp。
-
-- [前端常见跨域解决方案（全）](https://segmentfault.com/a/1190000011145364)
-- [跨域资源共享 CORS 详解）](http://www.ruanyifeng.com/blog/2016/04/cors.html)
 
 ## CSS 中一个块级元素有多少种垂直水平居中
 
@@ -336,7 +330,7 @@ display: inline-block;
 - 元素间的边距由 margin 值定义，相邻的两个 box 之间的 margin 会发生重叠
 - 计算 BFC 盒子高度时，浮动元素也参与计算
 - BFC 就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
-- ？BFC 的区域不会与 float box 重叠。
+- BFC 的区域不会与 float box 重叠。
 
 ### 什么条件下生成 BFC？
 
