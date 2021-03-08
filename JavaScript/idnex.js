@@ -1,23 +1,19 @@
 // 1、按要求实现add函数。示例：add(1); //1 add()(2); //3 add()()(3); //5;
 function add(value) {
-  add.count = 0;
-  add.value = 0;
-  console.log(add.count);
-  console.log(arguments.callee);
+  if (typeof add.value !== "number") {
+    add.value = 0;
+  }
 
-  if (add.count === 0) {
-    add.count = add.count + 1;
-    add.value = value ? value + 1 : 1;
+  if (typeof value === "number") {
+    add.value = value ? value + add.value : add.value + 1;
     return add.value;
   } else {
+    add.value = add.value + 1;
     return add;
   }
 }
 
-const result = add(3);
-const result1 = add();
-
-console.log(result1);
+function add() {}
 
 // 2、如何找出一个页面里面哪个标签使用最多及数量
 
